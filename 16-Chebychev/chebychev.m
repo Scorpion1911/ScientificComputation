@@ -14,8 +14,14 @@ uxx=-24*exp(x).*sin(5*x)+10*exp(x).*cos(5*x);
 %calculating to find this dirrivatives using cheb
 
 N=20;
-[D,x2]=cheb(N);
+[D,x2]=cheb(N-1);
 D2=D^2;
+
+D(1,:)=zeros(1,N);%BC
+D(end,:)=zeros(1,N);%BC
+D2(1,:)=zeros(1,N);%BC
+D2(end,:)=zeros(1,N);%BC
+
 
 u2=exp(x2).*sin(5*x2);
 u2x=D*u2;

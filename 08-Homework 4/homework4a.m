@@ -119,6 +119,6 @@ w0=reshape(W0,4096,1);
 % % 
 % a6=a1.*a3
 % w1-a5+a6
- tspan=0:0.1:40;
+ tspan=0:0.5:4;
  [t, w_t]   = ode45('rhs',tspan,w0,[],A,A_s,B,C,nu)
 
